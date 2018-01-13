@@ -1,6 +1,5 @@
 import { row, el } from "../react-style-elements/elements";
 import { checkbox } from "../react-style-elements/elements/input";
-import { padding } from "../react-style-elements/elements/attributes";
 
 import { Styles } from "../styles";
 
