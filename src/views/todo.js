@@ -4,16 +4,9 @@ import { padding } from "../react-style-elements/elements/attributes";
 
 import { Styles } from "../styles";
 
-export default (label, status, onChange) =>
-  row(
-    Styles.Todo,
-    [],
-    [
-      checkbox(null, [], {
-        checked: false,
-        label: el(Styles.TodoLabel, [], label),
-        onChange
-      }),
-      el(Styles.TodoStatus, [], `(${status})`)
-    ]
-  );
+export default (id, name, completed, onChange) =>
+  checkbox(null, [], {
+    checked: completed,
+    label: el(Styles.TodoLabel, [], name),
+    onChange: () => onChange(id)
+  });
