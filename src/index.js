@@ -5,15 +5,23 @@ import { Provider } from "react-redux";
 
 import App from "./views/app";
 
-let nextTodoId = 2;
-
 const initialTodosState = [
-  { id: 0, name: "Create `react-style-elements`", completed: false },
-  { id: 1, name: "Todos app example", completed: false }
+  { id: 0, text: "Create `react-style-elements`", completed: false },
+  { id: 1, text: "Todos app example", completed: false }
 ];
 
 function todos(state = initialTodosState, action) {
   switch (action.type) {
+    case "ADD_TODO":
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ];
+
     case "TOGGLE_TODO":
       return state.map(
         todo =>
